@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Turkish Steps — турецкий для обычного дня</title>
+    <meta
+      name="description"
+      content="Простой интерактивный сайт для изучения турецкого языка через бытовые ситуации."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#overview" aria-label="Turkish Steps">
+          <span class="brand-mark" aria-hidden="true">TR</span>
+          <span>
+            Turkish Steps
+            <small>турецкий для быта</small>
+          </span>
+        </a>
+
+        <nav class="topnav" aria-label="Навигация">
+          <a href="#lessons">Уроки</a>
+          <a href="#practice">Повторение</a>
+          <button class="ghost-button" type="button" data-reset-progress>Сбросить</button>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" id="overview">
+          <div class="hero-copy">
+            <p class="eyebrow">4 короткие ситуации</p>
+            <h1>Турецкий для обычного дня</h1>
+            <p>
+              Магазин, автобус, разговор о кошках и заказ в кафе. Каждая тема
+              собрана как мини-урок: ситуация, полезные фразы, короткое задание
+              и сохранённый прогресс.
+            </p>
+
+            <div class="hero-actions">
+              <a class="primary-button" href="#lessons">Начать урок</a>
+              <a class="secondary-button" href="#practice">Повторить фразы</a>
+            </div>
+          </div>
+
+          <div class="scene-board" aria-hidden="true">
+            <div class="scene-tile shop">
+              <span></span>
+              <strong>Market</strong>
+            </div>
+            <div class="scene-tile bus">
+              <span></span>
+              <strong>Otobüs</strong>
+            </div>
+            <div class="scene-tile cats">
+              <span></span>
+              <strong>Kediler</strong>
+            </div>
+            <div class="scene-tile cafe">
+              <span></span>
+              <strong>Kafe</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="progress-strip" aria-label="Прогресс обучения">
+          <div>
+            <span class="metric-value" data-progress-count>0/4</span>
+            <span class="metric-label">уроков пройдено</span>
+          </div>
+          <div>
+            <span class="metric-value" data-progress-percent>0%</span>
+            <span class="metric-label">общий прогресс</span>
+          </div>
+          <div>
+            <span class="metric-value" data-current-topic>Магазин</span>
+            <span class="metric-label">текущая тема</span>
+          </div>
+        </section>
+
+        <section class="lesson-layout" id="lessons">
+          <aside class="lesson-menu" aria-label="Список уроков">
+            <div class="section-heading">
+              <p class="eyebrow">Маршрут</p>
+              <h2>Бытовые ситуации</h2>
+            </div>
+            <div class="lesson-list" data-lesson-list></div>
+          </aside>
+
+          <section class="lesson-stage" aria-live="polite">
+            <div data-lesson-stage></div>
+          </section>
+        </section>
+
+        <section class="practice-zone" id="practice">
+          <div class="section-heading">
+            <p class="eyebrow">Быстрое повторение</p>
+            <h2>Карточка фразы</h2>
+          </div>
+
+          <div class="flashcard" data-flashcard>
+            <p class="flashcard-topic" data-flashcard-topic>Магазин</p>
+            <p class="flashcard-phrase" data-flashcard-phrase>Merhaba</p>
+            <p class="flashcard-translation" data-flashcard-translation hidden>Здравствуйте</p>
+            <div class="flashcard-actions">
+              <button class="secondary-button" type="button" data-show-translation>
+                Показать перевод
+              </button>
+              <button class="ghost-button" type="button" data-next-card>Другая фраза</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
